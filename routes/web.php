@@ -3,4 +3,5 @@
 use App\Http\Controllers\PostController;
 use App\RMVC\Route\Route;
 
-Route::get('/posts', [PostController::class, 'index'])->name('posts')->middleware('auth');
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index')->middleware('auth');
+Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show')->middleware('auth');
